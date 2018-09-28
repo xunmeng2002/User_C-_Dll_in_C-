@@ -37,6 +37,13 @@ namespace DllTest
         [DllImport(DLL_NAME, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
         public static extern int call_divide(int a, int b);
 
+        [DllImport(DLL_NAME, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr create_user_api();
+        public static extern int sum_with_api(IntPtr user_api);
+        [DllImport(DLL_NAME, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int divide_with_api(IntPtr user_api);
+
+
         static FuncCallback m_func_callback;
         static IntPtr m_func_callback_point;
         public static int my_sum(int a, int b)
@@ -75,6 +82,11 @@ namespace DllTest
             Console.WriteLine("call_minus: " + call_minus(1, 2).ToString());
             Console.WriteLine("call_multi: " + call_multi(1, 2).ToString());
             Console.WriteLine("call_divide: " + call_divide(1, 2).ToString());
+
+            m_user_api = create_user_api();
+            Console.WriteLine("sum_with_api: {0}", sum_with_api(m_user_api));
+            Console.WriteLine("divide_with_api: {0}", divide_with_api(m_user_api));
+
 
             Console.Read();
         }

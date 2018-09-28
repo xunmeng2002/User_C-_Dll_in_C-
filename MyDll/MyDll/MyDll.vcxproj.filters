@@ -18,5 +18,13 @@
     <ClCompile Include="my_dll.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="UserApi.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UserApi.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

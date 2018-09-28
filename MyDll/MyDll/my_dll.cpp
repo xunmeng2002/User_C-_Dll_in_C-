@@ -1,3 +1,4 @@
+#include "UserApi.h"
 #define PB_API __declspec(dllexport) 
 
 extern "C"
@@ -49,5 +50,17 @@ extern "C"
 	PB_API int sum_2(SumFunc sum_func, int a, int b)
 	{
 		return sum_func(a, b);
+	}
+	PB_API void* create_user_api()
+	{
+		return new UserApi();
+	}
+	PB_API int sum_with_api(UserApi* user_api)
+	{
+		return user_api->m_a + user_api->m_b;
+	}
+	PB_API int divide_with_api(UserApi* user_api)
+	{
+		return user_api->m_a / user_api->m_b;
 	}
 }

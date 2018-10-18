@@ -17,3 +17,6 @@ MyDll/MyDll.sdf
 *.log
 MyDll/Debug/MyDll.exp
 MyDll/Debug/MyDll.ilk
+*.sdf
+*.suo
+*.sdf
